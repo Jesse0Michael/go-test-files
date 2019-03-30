@@ -21,3 +21,5 @@ This command will filter down to a file that can be identified as being audio wi
 When multiple files match a filter, a random file will be chosen.
 
 If no arguments are provide any file will be selected at random, unless a `GOFILES_DEFAULT` enviornment variable is set.
+
+Your keywords can match any substring in the [files path or explicit keywords](gofiles/content/files.go).
