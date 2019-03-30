@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/atotto/clipboard"
@@ -30,7 +31,7 @@ func main() {
 	keywords := flag.Args()
 
 	if d, ok := os.LookupEnv(EnvDefaultKeyword); ok && len(keywords) == 0 {
-		keywords = []string{d}
+		keywords = strings.Split(d, " ")
 	}
 
 	for _, key := range keywords {
