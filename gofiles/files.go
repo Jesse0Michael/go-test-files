@@ -1,4 +1,4 @@
-package cli
+package gofiles
 
 // StaticFiles is the static list of content for the test-files repo
 // must be kept up to date with the repository

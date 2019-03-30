@@ -1,4 +1,4 @@
 
 build:
 	if [ ! -d cmd ]; then mkdir cmd; fi
-	go build -o cmd/testfiles
+	go build -o cmd/gofiles
