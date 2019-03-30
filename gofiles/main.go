@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/atotto/clipboard"
-	"github.com/jesse0michael/go-test-files/gofiles"
+	"github.com/jesse0michael/go-test-files/gofiles/content"
 )
 
 const (
@@ -24,7 +24,7 @@ func usage() {
 
 func main() {
 	rand.Seed(time.Now().Unix())
-	files := gofiles.StaticFiles()
+	files := content.StaticFiles()
 	flag.Usage = usage
 	flag.Parse()
 	keywords := flag.Args()

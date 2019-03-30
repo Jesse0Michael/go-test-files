@@ -1,4 +1,4 @@
-package gofiles
+package content
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
 
 build:
-	if [ ! -d cmd ]; then mkdir cmd; fi
-	go build -o cmd/gofiles
+	if [ ! -d bin ]; then mkdir bin; fi
+	go build -o bin/gofiles github.com/jesse0michael/go-test-files/gofiles
