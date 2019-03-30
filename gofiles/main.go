@@ -13,7 +13,7 @@ import (
 
 const (
 	// EnvDefaultKeyword sets a keyword to filter by when no arguments are given
-	EnvDefaultKeyword = "TEST_FILES_DEFAULT"
+	EnvDefaultKeyword = "GOFILES_DEFAULT"
 )
 
 func usage() {
