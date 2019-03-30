@@ -42,7 +42,7 @@ func (c *ContentFile) Matches(keyword string) bool {
 	}
 
 	for _, k := range c.Keywords {
-		if strings.Contains(sanitizer.Replace(c.Path), k) {
+		if strings.Contains(sanitizer.Replace(k), key) {
 			return true
 		}
 	}
