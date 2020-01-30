@@ -6,17 +6,17 @@ import (
 )
 
 const (
-	githubFmt = "https://github.com/Jesse0Michael/test-files/blob/master/content/%s?raw=1"
+	githubFmt = "https://raw.githubusercontent.com/Jesse0Michael/go-test-fiiles/master/content/%s"
 )
 
 //Content is a collection of all test files
 type Content struct {
-	Files []ContentFile
+	Files []File
 }
 
 // Filter a list of Content Files to those that match a given keyword
 func (c *Content) Filter(keyword string) {
-	matching := []ContentFile{}
+	matching := []File{}
 	for _, f := range c.Files {
 		if f.Matches(keyword) {
 			matching = append(matching, f)
@@ -26,14 +26,14 @@ func (c *Content) Filter(keyword string) {
 	c.Files = matching
 }
 
-//ContentFile is an individual test file with identifying information
-type ContentFile struct {
+//File is an individual test file with identifying information
+type File struct {
 	Path     string
 	Keywords []string
 }
 
 // Matches determines whether a given keyword matches this ContentFile
-func (c *ContentFile) Matches(keyword string) bool {
+func (c *File) Matches(keyword string) bool {
 	sanitizer := strings.NewReplacer("/", "", "-", "")
 	key := sanitizer.Replace(keyword)
 
@@ -51,6 +51,6 @@ func (c *ContentFile) Matches(keyword string) bool {
 }
 
 // URL returns the absolute url to the raw content file
-func (c *ContentFile) URL() string {
+func (c *File) URL() string {
 	return fmt.Sprintf(githubFmt, c.Path)
 }
